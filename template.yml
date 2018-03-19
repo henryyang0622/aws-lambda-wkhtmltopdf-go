@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  HtmlToPDF:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: main
+      Runtime: go1.x
+      Timeout: 600
+      MemorySize: 512
+      Events:
+        GetEvent:
+          Type: Api
+          Properties:
+            Path: /pdf/
+            Method: post
