@@ -1,13 +1,23 @@
 # aws-lambda-wkhtmltopdf-go
-Convert html to pdf using wkhtmltopdf on AWS Lambda + APIGateway use golang
+Convert html to pdf using [wkhtmltopdf](https://wkhtmltopdf.org/) on AWS Lambda + APIGateway use golang
 
 
 ### Test  ###
-* use AWS SAM
+* Use AWS SAM
     * install [AWS SAM](https://github.com/awslabs/serverless-application-model)
     * install docker
-    * go build main.go
-    * use command "sam local start-api"
+    * build code   
+        * use command  "go build main.go"
+    * start test 
+        * use command "sam local start-api"
+    * put you test data(html must base64 encode or url) to http://127.0.0.1:3000/pdf/ 
+    * you will get file (encode in base64 )
+    
+* Use [AWS Clould9]https://aws.amazon.com/tw/cloud9/
+    * build code   
+        * use command  "go build main.go"
+    * start test 
+        * use command "sam local start-api"
     * put you test data(html must base64 encode or url) to http://127.0.0.1:3000/pdf/ 
     * you will get file (encode in base64 )
 
